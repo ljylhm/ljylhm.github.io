@@ -192,22 +192,22 @@ Node.js官网    http://nodejs">
 </blockquote>
 <p>Node.js官网    <a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a> </p>
 <p>如果你不知道自己应该装什么位数的系统了，在Linux上使用getconf LONG_BIT  命令来查看。</p>
-<p><img src="../img/linuxNode-1.png" alt="Alt text"><br>如图，我的是64位。</p>
+<p><img src="/img/linuxNode-1.png" alt="Alt text"><br>如图，我的是64位。</p>
 <blockquote>
 <p>第二步：对应的资源传到服务器上</p>
 </blockquote>
 <p>从Windows传到Linux的工具有很多，我使用这一款winScp,简洁大方款。将文件上传到指定的文件夹后，就要进行解压的操作了，进入指定的文件夹，运行<strong>tar -xvf  ‘你上传的node打包文件夹’</strong> 进行解压，解压后会有一个同名的nodejs文件，这时候利用<strong>mv</strong> 进行重命名</p>
-<p><img src="../img/linuxNode-2.png" alt="Alt text"><br>如图 利用mv将文件夹重命名为nodejs</p>
+<p><img src="/img/linuxNode-2.png" alt="Alt text"><br>如图 利用mv将文件夹重命名为nodejs</p>
 <blockquote>
 <p>第三步：设置环境变量</p>
 </blockquote>
 <p>这里要将node设为Linux的全局变量，这里使用Linux的软连接来进行设置。主要利用 <strong>ln指令来建立软连接</strong> </p>
-<p><img src="../img/linuxNode-3.png" alt="Alt text"><br>如图 利用<strong>ln -s</strong> 将node文件夹中的npm和node 与bin文件夹建立了联系</p>
+<p><img src="/img/linuxNode-3.png" alt="Alt text"><br>如图 利用<strong>ln -s</strong> 将node文件夹中的npm和node 与bin文件夹建立了联系</p>
 <blockquote>
 <p>第四步：检测是否安装node</p>
 </blockquote>
 <p>这一步很简单，就是使用node-v npm-v 来使用就行。</p>
-<p><img src="../img/linuxNode-4.png" alt="Alt text"></p>
+<p><img src="/img/linuxNode-4.png" alt="Alt text"></p>
 <p>当你看到这个的时候，表示你已经安装成功了。</p>
 
 
