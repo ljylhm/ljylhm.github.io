@@ -10,6 +10,13 @@
 
     <!--Description-->
     
+        <meta name="description" content="Linux环境装Node
+在windows的环境上装node 是非常容易的一件事情，只需要找到相应的资源，点击安装，下一步下一步就行了，Linux环境下没有了图形化的使用界面，那么我们应该怎样来安装Node了。
+
+第一步 首先还是找到相应的资源
+
+Node.js官网    http://nodejs">
+    
 
     <!--Author-->
     
@@ -18,7 +25,7 @@
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="武小郎烧饼铺"/>
+        <meta property="og:title" content="Linux环境装Node"/>
     
 
     <!--Open Graph Description-->
@@ -29,7 +36,7 @@
 
     <!--Type page-->
     
-        <meta property="og:type" content="website" />
+        <meta property="og:type" content="article" />
     
 
     <!--Page Cover-->
@@ -40,7 +47,7 @@
 
     <!-- Title -->
     
-    <title>武小郎烧饼铺</title>
+    <title>Linux环境装Node - 武小郎烧饼铺</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -129,81 +136,95 @@
 
     <!-- Main Content -->
     <!-- Page Header -->
-<!-- Set your background image for this header in the theme's configuration: index_cover -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="site-heading">
-                    <h1>武小郎烧饼铺</h1>
-                    <hr class="small">
-                    <span class="subheading"></span>
+                <div class="post-heading">
+                    <h1>Linux环境装Node</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-02
+                        
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-            
-                <div class="post-preview">
-    <a href="/2018/05/02/Linux环境装Node/">
-        <h2 class="post-title">
-            Linux环境装Node
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-05-02
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/04/28/如何用hexo搭建自己博客/">
-        <h2 class="post-title">
-            利用hexo生成自己的博客
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-04-28
-    </p>
-</div>
-<hr>
-            
-                <div class="post-preview">
-    <a href="/2018/04/26/hello-world/">
-        <h2 class="post-title">
-            Hello World
-        </h2>
-        
-    </a>
-    <p class="post-meta">
-        <!-- Date and Author -->
-        
-        2018-04-26
-    </p>
-</div>
-<hr>
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/Linux-Node/">#Linux Node</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
             
 
-            <ul class="pager">
-    
-    
-</ul>
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="Linux环境装Node"><a href="#Linux环境装Node" class="headerlink" title="Linux环境装Node"></a>Linux环境装Node</h2><hr>
+<p>在windows的环境上装node 是非常容易的一件事情，只需要找到相应的资源，点击安装，下一步下一步就行了，Linux环境下没有了图形化的使用界面，那么我们应该怎样来安装Node了。</p>
+<blockquote>
+<p>第一步 首先还是找到相应的资源</p>
+</blockquote>
+<p>Node.js官网    <a href="http://nodejs.cn/download/" target="_blank" rel="noopener">http://nodejs.cn/download/</a> </p>
+<p>如果你不知道自己应该装什么位数的系统了，在Linux上使用getconf LONG_BIT  命令来查看。</p>
+<p><img src="../img/linuxNode-1.png" alt="Alt text"><br>如图，我的是64位。</p>
+<blockquote>
+<p>第二步：对应的资源传到服务器上</p>
+</blockquote>
+<p>从Windows传到Linux的工具有很多，我使用这一款winScp,简洁大方款。将文件上传到指定的文件夹后，就要进行解压的操作了，进入指定的文件夹，运行<strong>tar -xvf  ‘你上传的node打包文件夹’</strong> 进行解压，解压后会有一个同名的nodejs文件，这时候利用<strong>mv</strong> 进行重命名</p>
+<p><img src="../img/linuxNode-2.png" alt="Alt text"><br>如图 利用mv将文件夹重命名为nodejs</p>
+<blockquote>
+<p>第三步：设置环境变量</p>
+</blockquote>
+<p>这里要将node设为Linux的全局变量，这里使用Linux的软连接来进行设置。主要利用 <strong>ln指令来建立软连接</strong> </p>
+<p><img src="../img/linuxNode-3.png" alt="Alt text"><br>如图 利用<strong>ln -s</strong> 将node文件夹中的npm和node 与bin文件夹建立了联系</p>
+<blockquote>
+<p>第四步：检测是否安装node</p>
+</blockquote>
+<p>这一步很简单，就是使用node-v npm-v 来使用就行。</p>
+<p><img src="../img/linuxNode-4.png" alt="Alt text"></p>
+<p>当你看到这个的时候，表示你已经安装成功了。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
         </div>
     </div>
-</div>
-
-
+</article>
 
     <!-- Footer -->
     <hr />

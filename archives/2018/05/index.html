@@ -10,15 +10,6 @@
 
     <!--Description-->
     
-        <meta name="description" content="利用hexo生成自己的博客
-什么是hexo
-Hexo 是一个基于 Node.js 的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。
-
- 你可以把它当成是一个类似wordPress的一键构建工具
-hexo准备
-安装hexo全局环境
-cnpm install hexo -g 或">
-    
 
     <!--Author-->
     
@@ -27,7 +18,7 @@ cnpm install hexo -g 或">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="利用hexo生成自己的博客"/>
+        <meta property="og:title" content="武小郎烧饼铺"/>
     
 
     <!--Open Graph Description-->
@@ -38,7 +29,7 @@ cnpm install hexo -g 或">
 
     <!--Type page-->
     
-        <meta property="og:type" content="article" />
+        <meta property="og:type" content="website" />
     
 
     <!--Page Cover-->
@@ -49,7 +40,7 @@ cnpm install hexo -g 或">
 
     <!-- Title -->
     
-    <title>利用hexo生成自己的博客 - 武小郎烧饼铺</title>
+    <title>Archives: 2018/5 - 武小郎烧饼铺</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -137,119 +128,49 @@ cnpm install hexo -g 或">
 </nav>
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<!-- Set your background image for this header in your post front-matter: cover -->
+    
 
+<!-- Page Header -->
+<!-- Set your background image for this header in the theme's configuration: index_cover -->
 <header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <h1>利用hexo生成自己的博客</h1>
-                    
-                    <span class="meta">
-                        <!-- Date and Author -->
-                        
-                        
-                            2018-04-26
-                        
-                    </span>
+                <div class="site-heading">
+                    <h1>2018/5</h1>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
-
-            <!-- Tags and categories -->
-           
-
-            <!-- Gallery -->
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
             
-
-            <!-- Post Main Content -->
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="利用hexo生成自己的博客"><a href="#利用hexo生成自己的博客" class="headerlink" title="利用hexo生成自己的博客"></a>利用hexo生成自己的博客</h2><hr>
-<h3 id="什么是hexo"><a href="#什么是hexo" class="headerlink" title="什么是hexo"></a>什么是hexo</h3><blockquote>
-<p>Hexo 是一个基于 Node.js 的静态博客程序，可以方便的生成静态网页托管在github和Heroku上。</p>
-</blockquote>
-<p> 你可以把它当成是一个类似wordPress的一键构建工具</p>
-<h3 id="hexo准备"><a href="#hexo准备" class="headerlink" title="hexo准备"></a>hexo准备</h3><ol>
-<li>安装hexo全局环境<blockquote>
-<p>cnpm install hexo -g 或者 npm install hexo -g</p>
-</blockquote>
-</li>
-<li><p>全局环境安装好后，可以到一个新的文件夹下，执行下面的操作</p>
-<blockquote>
-<p>hexo init</p>
-</blockquote>
-<p><img src="/img/hexo.init.png" alt="Alt text"><br>init后出现图片中的信息，将代码clone至当前文件夹并安装依赖，但是有可能会安装失败，这时删除node_modules再cnpm install 就行了</p>
-</li>
-<li><p>生成静态文件</p>
-<blockquote>
-<p>hexo g</p>
-</blockquote>
-</li>
-<li><p>部署本地服务器</p>
-<blockquote>
-<p>hexo d<br>部署完成后，可以输入localhost:4000到浏览器中打开看，一个默认的博客网站就生成了，大概是这样滴<br><img src="/img/hexo.d.png" alt="Alt text"></p>
-</blockquote>
-</li>
-<li><p>更换模板</p>
-<blockquote>
-<p>这样的网站肯定不能符合每个人的需求，好在我们可以更换模板用来选择我们喜欢的。<br><a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a> hexo的官方模板库<br><img src="/img/hexo.themes.png" alt="Alt text"><br>拿我用的举例：<br>点击进入你需要的模板（是一个github的仓库）<br><img src="/img/hexo.theme.install1.png" alt="Alt text"><br>你可以在文件夹下的themes下找到才安装的clean-blog<br><img src="/img/hexo.theme.dir.png" alt="Alt text"><br>改好之后，执行以下步骤</p>
-</blockquote>
-</li>
-</ol>
-<ul>
-<li>hexo.clean (清除缓存)</li>
-<li>hexo.g(重新生成静态文件)</li>
-<li><p>hexo.s</p>
-<blockquote>
-<p>再次打开以后就变成了新的模板内容了</p>
-</blockquote>
-</li>
-</ul>
-<p>  6.发布到github上</p>
-<blockquote>
-<p>hexo 支持发布到github上的对应的仓库 github可以自动部署的代码并托管在github的网站下<br>  还是在_config.yml配置文件下</p>
-<ul>
-<li>type 是对应的发布方式 </li>
-<li>repo 是对应的仓库</li>
-<li>branch 是对应的分支（我一般都是master）</li>
-<li>message 对应的commit (提交的信息)<br><img src="/img/hexo.git.png" alt="Alt text"><br>运行hexo d 来执行部署</li>
-</ul>
-</blockquote>
-<p>  7.发布新的文章</p>
-<blockquote>
-<p>搭博客的目的是为了发表文章，所以如何发布一篇文章了<br>  hexo new &lt;文章的名字&gt;<br>  会生成一个md文件在source/_posts下面<br>  你的文章就是一个md文件。</p>
-</blockquote>
-<p>  然后重复</p>
-<ul>
-<li>hexo.clean (清除缓存)</li>
-<li>hexo.g(重新生成静态文件)</li>
-<li>hexo.d</li>
-</ul>
-
-
-                
-            </div>
-
-            <!-- Comments -->
+                <div class="post-preview">
+    <a href="/2018/05/02/Linux环境装Node/">
+        <h1 class="post-title archive">
+            Linux环境装Node
+        </h1>
+    </a>
+    <p class="post-meta archive">
+        <!-- Date and Author -->
+        
+        2018-05-02
+    </p>
+</div>
             
-                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                    
-
-
-                </div>
-            
+            <div class="archive-before-pagination"></div>
+            <ul class="pager">
+    
+    
+</ul>
         </div>
     </div>
-</article>
+</div>
+
 
     <!-- Footer -->
     <hr />
