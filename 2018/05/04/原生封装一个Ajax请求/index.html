@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- Head tag -->
+<head>
+
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!--Description-->
+    
+        <meta name="description" content="原生封装一个Ajax的请求
+我们经常使用ajax来进行请求，但是很多时候使用的都是封装后的ajax请求，例如jquery,zepto封装好的$ajax，axios,可能原生使用到的情况很少，所以今天好好的来学习一下如何封装原生的ajax。
+
+其实原生的ajax的核心就是这个——XMLHttpRequ">
+    
+
+    <!--Author-->
+    
+        <meta name="author" content="John Doe">
+    
+
+    <!--Open Graph Title-->
+    
+        <meta property="og:title" content="原生封装一个Ajax请求"/>
+    
+
+    <!--Open Graph Description-->
+    
+
+    <!--Open Graph Site Name-->
+    <meta property="og:site_name" content="武小郎烧饼铺"/>
+
+    <!--Type page-->
+    
+        <meta property="og:type" content="article" />
+    
+
+    <!--Page Cover-->
+    
+
+        <meta name="twitter:card" content="summary" />
+    
+
+    <!-- Title -->
+    
+    <title>原生封装一个Ajax请求 - 武小郎烧饼铺</title>
+
+    <!-- Bootstrap Core CSS -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="/css/style.css">
+
+    <!-- Custom Fonts -->
+    <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.6.3/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
+    <link href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" rel="stylesheet" type="text/css">
+
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="//oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
+    <script src="//oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <!-- Gallery -->
+    <link href="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.css" type="text/css" rel="stylesheet" />
+
+    <!-- Google Analytics -->
+    
+
+
+    <!-- favicon -->
+    
+    <link rel="icon" href="https://file.40017.cn/huochepiao/activity/20180501sweepCodeTest/img/keji.jpg">
+    
+	
+</head>
+
+
+<body>
+
+    <!-- Menu -->
+    <!-- Navigation -->
+<nav class="navbar navbar-default navbar-custom navbar-fixed-top">
+    <div class="container-fluid">
+        <!-- Brand and toggle get grouped for better mobile display -->
+        <div class="navbar-header page-scroll">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">武小郎烧饼</a>
+        </div>
+
+        <!-- Collect the nav links, forms, and other content for toggling -->
+        <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+            <ul class="nav navbar-nav navbar-right">
+                
+                    <li>
+                        <a href="/">
+                            
+                                首页
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="/archives">
+                            
+                                文章列表
+                            
+                        </a>
+                    </li>
+                
+                    <li>
+                        <a href="https://github.com/ljylhm">
+                            
+                                <i class="fa fa-github fa-stack-2x"></i>
+                            
+                        </a>
+                    </li>
+                
+            </ul>
+        </div>
+        <!-- /.navbar-collapse -->
+    </div>
+    <!-- /.container -->
+</nav>
+
+    <!-- Main Content -->
+    <!-- Page Header -->
+<!-- Set your background image for this header in your post front-matter: cover -->
+
+<header class="intro-header" style="background-image: url('http://www.codeblocq.com/assets/projects/hexo-theme-clean-blog/img/home-bg.jpg')">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <h1>原生封装一个Ajax请求</h1>
+                    
+                    <span class="meta">
+                        <!-- Date and Author -->
+                        
+                        
+                            2018-05-04
+                        
+                    </span>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
+
+            <!-- Tags and categories -->
+           
+                <div class="col-lg-4 col-lg-offset-2 col-md-5 col-md-offset-1 post-tags">
+                    
+                        
+
+
+<a href="/tags/ajax/">#ajax</a>
+
+
+                    
+                </div>
+                <div class="col-lg-4 col-md-5 post-categories">
+                    
+                </div>
+            
+
+            <!-- Gallery -->
+            
+
+            <!-- Post Main Content -->
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <h2 id="原生封装一个Ajax的请求"><a href="#原生封装一个Ajax的请求" class="headerlink" title="原生封装一个Ajax的请求"></a>原生封装一个Ajax的请求</h2><hr>
+<p>我们经常使用ajax来进行请求，但是很多时候使用的都是封装后的ajax请求，例如jquery,zepto封装好的$ajax，axios,可能原生使用到的情况很少，所以今天好好的来学习一下如何封装原生的ajax。</p>
+<blockquote>
+<p>其实原生的ajax的核心就是这个——<strong>XMLHttpRequest</strong>对象，利用这个对象才能就行ajax的传输。</p>
+</blockquote>
+<p>那我们先实例化一个XMLHttpRequest的对象</p>
+<pre><code>var xhr = new XMLHttpRequest(); 
+</code></pre><p>这样就可以实例化一个XMLHttpRequest的对象了</p>
+<blockquote>
+<p>xhr主要的几个方法</p>
+</blockquote>
+<pre><code>1.xhr.open(method,url,async)  这个方法主要是与服务器建立连接  
+
+2.xhr.onreadystatechange 这相当于一个回调，当客户端与服务器建立连接的过程中，会不断的返回当前连接的状态和是否成功。
+
+3.xhr.setRequestHeader() 这个方法用来设置请求的头部
+
+4.xhr.send(data) 这个方法用来发送数据到服务器
+</code></pre><font color="red">xhr.send 方法有几个小点需要注意 当用post方法的时候 需要将data转化成字符串的模式，字符串类似于“?name=tom&amp;age=123”这样。</font>
+
+<p>建立连接的过程中几个readystate值的代表意思</p>
+<p>0: 请求未初始化（代理被创建，但尚未调用 open() 方法）<br>1: 服务器连接已建立（open方法已经被调用）<br>2: 请求已接收（send方法已经被调用，并且头部和状态已经可获得）<br>3: 请求处理中（下载中，responseText 属性已经包含部分数据）<br>4: 请求已完成，且响应已就绪（下载操作已完成）</p>
+<blockquote>
+<p>封装ajax</p>
+</blockquote>
+<p>我们把ajax封装成一个单例的对象里面有对应的方法</p>
+<p>get 请求get的时候用到的方法<br>post 请求post的时候用到的方法<br>common 通用的方法 post和get 通用的请求方法<br>dataChange 将data转换成字符串</p>
+<pre><code>var ajax = {
+    dataChange：function(){},
+    common: function(){},
+    get:function(){},
+    post:function(){}
+}  
+</code></pre><p>这个单例里面有个4个方法</p>
+<pre><code>dataChange: function (data) { // 将 data 转成字符串
+        if (!data) return &quot;&quot;;
+        if (typeof data != &quot;object&quot;) {
+            console.error(&quot;data must be object&quot;);
+            return;
+        }
+        var str = &quot;&quot;;
+        Object.keys(data).forEach(function (ele, index, arr) {
+            if (index == 0) str = str + &quot;?&quot; + ele + &quot;=&quot; + data[ele];
+            else str = str + &quot;&amp;&quot; + ele + &quot;=&quot; + data[ele];
+        })
+        return str;
+}, 
+</code></pre><p>之前说过，post请求的时候需要把data转化成类似于“?name=tom&amp;age=123”模式，所以dataChange的主要作用就是转换字符串</p>
+<pre><code>common: function (method, url, data, cb) {
+        var data = data || &quot;&quot;;
+        var toLower = method.toLowerCase();
+        var xhr = new XMLHttpRequest();
+        data = this.dataChange(data);
+        if (toLower == &quot;get&quot;) url = url + data;
+
+        xhr.open(method, url, false);
+
+        xhr.onreadystatechange = function () {
+            if (xhr.readyState == 4 &amp;&amp; xhr.status == 200) { // 成功的话
+                cb(xhr.response);
+            }
+        };
+
+        xhr.setRequestHeader(&quot;Content-Type&quot;, &quot;application/json&quot;);
+
+        if (toLower == &quot;get&quot;) {
+            xhr.send();
+        } else if (toLower == &quot;post&quot;) {
+            xhr.send(data);
+        } else {
+            console.log(&quot;method is not correct&quot;);
+            return;
+        }
+
+    },
+</code></pre><p>请求的通用方法，对方法,url,传输的数据之类进行了封装</p>
+<pre><code>get: function (url, data, cb) {
+    this.common(&quot;GET&quot;, url, data, cb);
+},
+post: function (url, data, cb) {
+    this.common(&quot;POST&quot;, url, data, cb);
+} 
+</code></pre><p>直接调用common通用方法，将method进行替换</p>
+<p>基本上一个简单的封装就这样做好了，我们大部分的时候不会用到直接原生调用的情况，但是我们还是要知道原理，这样无论是遇到问题或者面试的时候才能比较从容。</p>
+
+
+                
+            </div>
+
+            <!-- Comments -->
+            
+                <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                    
+
+
+                </div>
+            
+        </div>
+    </div>
+</article>
+
+    <!-- Footer -->
+    <hr />
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <ul class="list-inline text-center">
+                    
+
+                    
+
+                    
+                        <li>
+                            <a href="https://github.com/klugjo/hexo-theme-clean-blog" target="_blank">
+                                <span class="fa-stack fa-lg">
+                                    <i class="fa fa-circle fa-stack-2x"></i>
+                                    <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                </span>
+                            </a>
+                        </li>
+                    
+
+                    
+
+                    
+
+                    
+                </ul>
+                <p class="copyright text-muted">&copy; 2018 John Doe<br></p>
+                <p class="copyright text-muted">Original Theme <a target="_blank" href="http://startbootstrap.com/template-overviews/clean-blog/">Clean Blog</a> from <a href="http://startbootstrap.com/" target="_blank">Start Bootstrap</a></p>
+                <p class="copyright text-muted">Adapted for <a target="_blank" href="https://hexo.io/">Hexo</a> by <a href="http://www.codeblocq.com/" target="_blank">Jonathan Klughertz</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+
+    <!-- After footer scripts -->
+    
+<!-- jQuery -->
+<script src="//code.jquery.com/jquery-2.1.4.min.js"></script>
+
+<!-- Bootstrap -->
+<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+
+<!-- Gallery -->
+<script src="//cdnjs.cloudflare.com/ajax/libs/featherlight/1.3.5/featherlight.min.js" type="text/javascript" charset="utf-8"></script>
+
+<!-- Disqus Comments -->
+
+
+
+</body>
+
+</html>
