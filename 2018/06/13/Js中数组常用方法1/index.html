@@ -10,8 +10,10 @@
 
     <!--Description-->
     
-        <meta name="description" content="Js中数组常用方法1
-Js中数组的常用方法1">
+        <meta name="description" content="Js中数组常用方法(1)
+前段时间被人问到了几个关于数组的问题，以前对于数组常用的一些的方法自认为了解，当被问到的时候才抓瞎了，这段时间准备好好的把数组的知识在梳理梳理。
+所有的这些方法都会返回一个回调方法，方法里面的参数也比较好记
+这个方法基本用来遍历一个数组，回调函数里提供了三个参数（item ">
     
 
     <!--Author-->
@@ -21,7 +23,7 @@ Js中数组的常用方法1">
 
     <!--Open Graph Title-->
     
-        <meta property="og:title" content="Js中数组常用方法1"/>
+        <meta property="og:title" content="Js中数组常用方法(1)"/>
     
 
     <!--Open Graph Description-->
@@ -43,7 +45,7 @@ Js中数组的常用方法1">
 
     <!-- Title -->
     
-    <title>Js中数组常用方法1 - 武小郎烧饼铺</title>
+    <title>Js中数组常用方法(1) - 武小郎烧饼铺</title>
 
     <!-- Bootstrap Core CSS -->
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"/>
@@ -139,7 +141,7 @@ Js中数组的常用方法1">
         <div class="row">
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
                 <div class="post-heading">
-                    <h1>Js中数组常用方法1</h1>
+                    <h1>Js中数组常用方法(1)</h1>
                     
                     <span class="meta">
                         <!-- Date and Author -->
@@ -181,8 +183,55 @@ Js中数组的常用方法1">
 
             <!-- Post Main Content -->
             <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <h2 id="Js中数组常用方法1"><a href="#Js中数组常用方法1" class="headerlink" title="Js中数组常用方法1"></a>Js中数组常用方法1</h2><hr>
-<h3 id="Js中数组的常用方法1"><a href="#Js中数组的常用方法1" class="headerlink" title="Js中数组的常用方法1"></a>Js中数组的常用方法1</h3>
+                <h2 id="Js中数组常用方法-1"><a href="#Js中数组常用方法-1" class="headerlink" title="Js中数组常用方法(1)"></a>Js中数组常用方法(1)</h2><hr>
+<p>前段时间被人问到了几个关于数组的问题，以前对于数组常用的一些的方法自认为了解，当被问到的时候才抓瞎了，这段时间准备好好的把数组的知识在梳理<br>梳理。<br></p>
+<p>所有的这些方法都会返回一个回调方法，方法里面的参数也比较好记<br></p>
+<p>这个方法基本用来遍历一个数组，回调函数里提供了三个参数（item index arr）<br><br>item <b>是遍历中的每一个数据选项</b> <br><br>index <b>是每个数据选项的顺序</b> <br><br>arr <b>是指代的这个数组</b></p>
+<h3 id="forEach"><a href="#forEach" class="headerlink" title="forEach"></a>forEach</h3><pre><code>let arr = [1, 2, 3, 10, 20, 30, 40];
+arr.forEach((item, index, arr) =&gt; {
+    console.log(item); // 1, 2, 3, 10, 20, 30, 40
+})
+</code></pre><h3 id="some"><a href="#some" class="headerlink" title="some"></a>some</h3><p>这个方法用来判断数组里面是否至少有一个符合条件的选项数据（符合返回true 反之返回false）</p>
+<pre><code>let arr = [1, 2, 3, 10, 20, 30, 40];
+let flag = arr.some((item, index, arr) =&gt; {
+        return item &gt; 30; 
+})
+
+console.log(flag) // true
+
+let flag1 = arr.some((item, index, arr) =&gt; {
+    return itme &gt; 40; 
+})
+
+console.log(flag1) // false
+</code></pre><h3 id="every"><a href="#every" class="headerlink" title="every"></a>every</h3><p>这个方法用来判断数组里面是否每一个选项数据都符合条件（符合返回true 反之返回false）</p>
+<pre><code>let arr = [1, 2, 3, 10, 20, 30, 40];    
+let flag = arr.every((item, index, arr) =&gt; {
+        return item &gt; 30; 
+})
+
+console.log(flag) // false
+
+let flag1 = arr.some((item, index, arr) =&gt; {
+    return itme &gt; 0; 
+})
+
+console.log(flag1) // true
+</code></pre><h3 id="map"><a href="#map" class="headerlink" title="map"></a>map</h3><p>这个方法用来对数组中的每一个数据选项进行操作，返回一个新的数组</p>
+<pre><code>let arr = [1, 2, 3, 10, 20, 30, 40];    
+let newArr = arr.map((item, index, arr) =&gt; {
+        return item * 3; 
+})
+
+console.log(newArr); // [ 3, 6, 9, 30, 60, 90, 120 ]
+</code></pre><h3 id="filter"><a href="#filter" class="headerlink" title="filter"></a>filter</h3><p>这个方法用来对数组中的每一个数据选项进行判断，不符合条件的将会被过滤掉，返回一个新的数组</p>
+<pre><code>let arr = [1, 2, 3, 10, 20, 30, 40];    
+let newArr = arr.filter((item, index, arr) =&gt; {
+        return item &gt; 10; 
+})
+
+console.log(newArr); // [ 20, 30, 40 ]
+</code></pre>
 
                 
             </div>
